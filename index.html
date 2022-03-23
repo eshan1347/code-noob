@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Website</title>
+    <link rel="stylesheet" type="text/css" href="index.css">
+    <script type='text/javascript' src='https://code.jquery.com/jquery-3.6.0.js'></script>
+    <script src='https://code.jquery.com/ui/1.13.1/jquery-ui.js' 
+    integrity='sha256-6XMVI0zB8cRzfZjqKcD01PBsAy3FlDASrlC8SxCpInY=' 
+    crossorigin='anonymous'></script>
+    <link href='https://code.jquery.com/ui/1.13.1/themes/ui-lightness/jquery-ui.css' rel='stylesheet' type='text/css'>
+</head>
+
+<body class="light_theme">
+    <h1>This is a website</h1>
+    <h1>Enjoy</h1>
+    <p id="para" >This is a really good website. make sure u r reading all this crap i am writing coz this is very importana.</p>
+    <h2>List incoming</h2>
+    <div>
+        <ol>
+            <li class="list">Trimmer</li>
+            <li class="list">Hair dryer</li>
+            <li class="list">Shirts</li>
+            <li class="list">Hoodie</li>
+        </ol>
+    </div>
+
+    <div>
+        <button class="btn" type="button" id="theme">Switch Theme</button>
+        <button class="btn" type="button" id="hide">Hide</button>
+        <button class="btn" type="button" id="show">Show</button>
+    </div>
+
+    <!-- <script src="index.js"></script> -->
+
+    <script>
+        $(function()
+        {
+            $('#show').hide('fast');
+            // $('body').addClass('dark_theme');
+            $('#theme').on('click',function()
+            {
+                $('body').toggleClass('dark_theme');
+                if($('body').className == "light_theme") {
+                    this.textContent = "Dark";
+                }
+                else {
+                    this.textContent = "Light";
+                }
+                // $('body').hide('fast');
+            });
+            $('#hide').on('click',function()
+            {
+                $('h1').hide('fast');
+                $('h2').hide('fast');
+                $('p').hide('fast');
+                $('#theme').hide('fast');
+                $('ol').hide('fast');
+                $('#hide').hide('fast');
+                // $('body').hide();
+                $('#show').fadeIn(100);
+
+            });
+            $('#show').on('click',function()
+            {
+                $('h1').fadeIn();
+                $('h2').fadeIn();
+                $('p').fadeIn();
+                $('#theme').fadeIn();
+                $('ol').fadeIn();
+                $('#hide').fadeIn();
+                // $('body').show();
+                $('#show').hide('fast');
+
+            });
+        });
+    </script>
+
+</body>
+</html>
